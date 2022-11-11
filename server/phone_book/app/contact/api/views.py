@@ -8,8 +8,6 @@ from phone_book.app.web.app import View
 
 
 class ContactListView(View):
-    @docs(tags=["contact"], summary="Вывести список контактов",
-          description="Выводит список контактов")
     @response_schema(ContactListSchema)
     async def get(self):
         contacts = await self.request.app.contact_accessor.get_contact_list()
@@ -20,8 +18,6 @@ class ContactListView(View):
             }
         )
 
-    @docs(tags=["contact"], summary="Создать новый контакт",
-          description="Создаёт новый контакт")
     @request_schema(NewContactSchema)
     @response_schema(ExistedContactSchema)
     async def post(self):
@@ -36,8 +32,6 @@ class ContactListView(View):
             }
         )
 
-    @docs(tags=["contact"], summary="Очистить список контактов",
-          description="Очищает список контактов")
     @response_schema(ContactListSchema)
     async def delete(self):
         contacts = await self.request.app.contact_accessor.get_contact_list()
@@ -51,16 +45,12 @@ class ContactListView(View):
 
 
 class ContactView(View):
-    @docs(tags=["contact"], summary="Вывести контакт по ID",
-          description="Выводит контакт по ID")
     @response_schema(ExistedContactSchema)
     async def get(self):
         uid = self.request.match_info["uid"]
         contact = await self.request.app.contact_accessor.get_contact_by_uid(uid)
         return json_response(status=200, data=ExistedContactSchema().dump(contact))
 
-    @docs(tags=["contact"], summary="Изменить существующий контакт",
-          description="Изменяет существующий контакт")
     @request_schema(ExistedContactSchema)
     @response_schema(ExistedContactSchema)
     async def put(self):
@@ -72,8 +62,6 @@ class ContactView(View):
             data=ExistedContactSchema().dump(edited_contact)
         )
 
-    @docs(tags=["contact"], summary="Удалить контакт по ID",
-          description="Удаляет контакт по ID")
     @response_schema(ExistedContactSchema)
     async def delete(self):
         uid = self.request.match_info["uid"]
