@@ -1,4 +1,4 @@
-from phone_book.app.web.app import View
+from IppTask5.app.web.app import View
 import aiohttp_jinja2
 
 

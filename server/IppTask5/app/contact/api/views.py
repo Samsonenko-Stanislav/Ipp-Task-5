@@ -2,9 +2,9 @@ from aiohttp.web_response import json_response
 
 from aiohttp_apispec import docs, request_schema, response_schema, json_schema
 
-from phone_book.app.contact.models import Contact
-from phone_book.app.contact.schemas import ContactListSchema, NewContactSchema, ExistedContactSchema
-from phone_book.app.web.app import View
+from IppTask5.app.contact.models import Contact
+from IppTask5.app.contact.schemas import ContactListSchema, NewContactSchema, ExistedContactSchema
+from IppTask5.app.web.app import View
 
 
 class ContactListView(View):
