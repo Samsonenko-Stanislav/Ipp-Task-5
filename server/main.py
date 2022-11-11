@@ -1,4 +1,4 @@
-from IppTask5.app.web.app import run_app
+from phone_book.app.web.app import run_app
 
 if __name__ == '__main__':
     run_app()

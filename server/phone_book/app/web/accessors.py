@@ -1,6 +1,6 @@
 import typing
 
-from IppTask5.app.contact.store.accessor import ContactAccessor
+from phone_book.app.contact.store.accessor import ContactAccessor
 
 if typing.TYPE_CHECKING:
     from phone_book.app.web.app import Application

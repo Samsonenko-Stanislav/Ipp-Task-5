@@ -1,6 +1,6 @@
 import typing
 
-from IppTask5.app.contact.api.views import ContactListView, ContactView
+from phone_book.app.contact.api.views import ContactListView, ContactView
 
 if typing.TYPE_CHECKING:
     from aiohttp.web_app import Application

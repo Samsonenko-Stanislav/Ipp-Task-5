@@ -5,9 +5,9 @@ from bson import ObjectId
 from pymongo import MongoClient
 from mongoengine import connect
 
-from IppTask5.app.contact.models import Contact
+from phone_book.app.contact.models import Contact
 if typing.TYPE_CHECKING:
-    from IppTask5.app.web.app import Application
+    from phone_book.app.web.app import Application
 
 
 class ContactAccessor:

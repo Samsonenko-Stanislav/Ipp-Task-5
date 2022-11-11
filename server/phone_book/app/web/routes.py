@@ -1,10 +1,9 @@
 import typing
 
-from IppTask5.app.contact.html.views import ContactListWebView
-
 if typing.TYPE_CHECKING:
     from aiohttp.web_app import Application
+from phone_book.app.contact.routes import setup_routes as setup_contact_routes
 
 
 def setup_routes(app: "Application"):
-    app.router.add_view("/web/contact", ContactListWebView)
+    setup_contact_routes(app)
